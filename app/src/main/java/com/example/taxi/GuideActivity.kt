@@ -21,9 +21,9 @@ class GuideActivity : AppCompatActivity() {
         button = findViewById(R.id.btn)
 
         viewPager.adapter = VpAdapter(this, List.list)
-        TabLayoutMediator(tab, viewPager) { _, _ -> }.attach()
+        TabLayoutMediator(tab, viewPager) {_,_ -> }.attach()
 
-        viewPager.unregisterOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+        viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 when (position) {
                     2 -> {

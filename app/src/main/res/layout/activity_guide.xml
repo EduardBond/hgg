@@ -37,6 +37,7 @@
     android:textColor="@color/white"
     android:backgroundTint="@color/aquamarine"
     android:layout_marginEnd="150dp"
+    android:onClick="guide"
     android:layout_marginStart="150dp"
     app:cornerRadius="30dp"
     app:layout_constraintBottom_toBottomOf="parent"
