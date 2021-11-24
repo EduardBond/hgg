@@ -7,8 +7,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.taxi.List.list
 
-class VpAdapter(val context: Context,): RecyclerView.Adapter<VpAdapter.MyVh>() {
+class VpAdapter(val context: Context, val list: ArrayList<guide>): RecyclerView.Adapter<VpAdapter.MyVh>() {
     class MyVh(itemView: View): RecyclerView.ViewHolder(itemView) {
         val title: TextView = itemView.findViewById(R.id.text)
         val descr: TextView = itemView.findViewById(R.id.text2)
@@ -20,11 +21,13 @@ class VpAdapter(val context: Context,): RecyclerView.Adapter<VpAdapter.MyVh>() {
     }
 
     override fun onBindViewHolder(holder: VpAdapter.MyVh, position: Int) {
-        TODO("Not yet implemented")
+       holder.title.text = list[position].title
+       holder.descr.text = list[position].descr
+        holder.image.setImageResource(list[position].image)
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return list.size
     }
 
 }
